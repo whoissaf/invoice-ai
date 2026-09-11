@@ -17,11 +17,11 @@ run_aider() {
     local prompt="$1"
     local extra_flags="$2"
     
-    echo "🤖 [INFO] Menggunakan: OpenRouter (google/gemini-1.5-flash)"
+    echo "🤖 [INFO] Menggunakan: OpenRouter -> google/gemini-flash-1.5 (1 Juta Token Context)"
     export OPENROUTER_API_KEY="$OPENROUTER_KEY"
     
-    # PENTING: Prefix 'openrouter/' WAJIB ada agar LiteLLM tahu provider-nya!
-    MODEL="openrouter/google/gemini-1.5-flash"
+    # INI ADALAH NAMA MODEL RESMI YANG BENAR DI OPENROUTER
+    MODEL="openrouter/google/gemini-flash-1.5"
 
     echo "⏳ Memproses... (mohon tunggu, sedang membaca PRD & menulis kode)"
     OUTPUT=$(aider $AIDER_BASE_FLAGS $extra_flags --model "$MODEL" --message "$prompt" 2>&1)
