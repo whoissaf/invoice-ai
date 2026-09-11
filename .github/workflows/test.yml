@@ -28,12 +28,13 @@ jobs:
     - name: Syntax Check
       run: |
         shopt -s nullglob
-        py_files=(*.py)
-        if [ ${#py_files[@]} -eq 0 ]; then
+        py_files=$(find . -name "*.py")
+        if [ -z "$py_files" ]; then
           echo "No Python files found to check"
         else
-          for file in "${py_files[@]}"; do
-            python -m py_compile "$file" 2>/dev/null || exit 1
+          for file in $py_files; do
+            echo "Checking $file"
+            python -m py_compile "$file" || (echo "Syntax error in $file"; exit 1)
           done
           echo "All syntax checks passed!"
         fi
