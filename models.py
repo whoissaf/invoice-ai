@@ -11,6 +11,10 @@ class User(Base):
     password_hash = Column(String(255))
     full_name = Column(String(255), nullable=False)
     phone = Column(String(20))
+
+    @classmethod
+    def get(cls, session, username):
+        return session.query(cls).filter(cls.email == username).first()
     role = Column(String(20), nullable=False)  # ADMIN, BORROWER, INVESTOR, UNDERWRITER
     status = Column(String(20), default='PENDING')  # PENDING, ACTIVE, SUSPENDED
     email_verified = Column(Boolean, default=False)

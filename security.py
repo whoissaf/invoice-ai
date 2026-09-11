@@ -69,7 +69,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
         # existing code
 
         async with get_db() as db:
-            user = await db.execute(User.get(db, username=token_data.username))
+            user = db.query(User).filter(User.email == token_data.username).first()
     if user is None:
         raise credentials_exception
     return user
