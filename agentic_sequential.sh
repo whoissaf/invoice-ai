@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Gunakan ABSOLUTE PATH
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PRD_FILE="$ROOT_DIR/PRD.md"
 CONVENTIONS_FILE="$ROOT_DIR/CONVENTIONS.md"
@@ -10,21 +9,18 @@ MAX_FIX_RETRIES=5
 mkdir -p "$BACKEND_DIR"
 cd "$BACKEND_DIR" || exit 1
 
-# Flag hemat RAM. Peringatan context limit diabaikan karena Gemini 1.5 Flash aslinya support 1 Juta token.
 AIDER_BASE_FLAGS="--yes --no-pretty --no-show-model-warnings --map-tokens 1024 --max-chat-history-tokens 1024"
-
 FILES=("requirements.txt" "database.py" "models.py" "schemas.py" "security.py" "routers.py" "main.py")
 
 run_aider() {
     local prompt="$1"
     local extra_flags="$2"
     
-    echo "🤖 [INFO] Menggunakan Provider: Gemini (gemini-1.5-flash-latest)"
-    export GEMINI_API_KEY="$GEMINI_KEY"
-    # FORMAT MODEL PALING STABIL UNTUK GOOGLE AI STUDIO
-    MODEL="gemini/gemini-1.5-flash-latest"
+    echo "🤖 [INFO] Provider: OpenRouter -> google/gemini-1.5-flash (1M token context)"
+    export OPENROUTER_API_KEY="$OPENROUTER_KEY"
+    MODEL="google/gemini-1.5-flash"
 
-    echo "⏳ Memproses... (mohon tunggu)"
+    echo "⏳ Memproses... (mohon tunggu, sedang membaca PRD & menulis kode)"
     OUTPUT=$(aider $AIDER_BASE_FLAGS $extra_flags --model "$MODEL" --message "$prompt" 2>&1)
     EXIT_CODE=$?
     echo "$OUTPUT"
@@ -39,11 +35,11 @@ run_aider() {
     return $EXIT_CODE
 }
 
-echo "🏗️ [FASE 1] Sequential Generation..."
+echo "️ [FASE 1] Sequential Generation (Satu per satu)..."
 for file in "${FILES[@]}"; do
     if [ ! -f "$BACKEND_DIR/$file" ]; then
         echo "📝 [GENERATE] Membuat file: $file"
-        PROMPT="Baca $PRD_FILE dan $CONVENTIONS_FILE. Buat HANYA file '$file'. JANGAN modifikasi file lain."
+        PROMPT="Baca $PRD_FILE dan $CONVENTIONS_FILE. Buat HANYA file '$file' berdasarkan spesifikasi. Pastikan logika bisnis aman. JANGAN buat atau modifikasi file lain."
         run_aider "$PROMPT" "--read $PRD_FILE --read $CONVENTIONS_FILE"
     else
         echo "⏭️ [SKIP] File $file sudah ada."
@@ -60,7 +56,6 @@ git merge origin/main --allow-unrelated-histories -m "Merge remote" || true
 for (( i=1; i<=MAX_FIX_RETRIES; i++ )); do
     echo "🔄 [ITERASI $i] Commit dan Push..."
     
-    # AMAN: git add . TIDAK AKAN MENG-UPLOAD FILE DI .gitignore
     git add .
     
     if git diff --staged --quiet; then
@@ -84,11 +79,11 @@ for (( i=1; i<=MAX_FIX_RETRIES; i++ )); do
     CONCLUSION=$(gh run view "$RUN_ID" --json conclusion -q '.conclusion')
     
     if [ "$CONCLUSION" == "success" ]; then
-        echo "✅ [SUCCESS] Backend berhasil Build & Test!"
+        echo "✅ [SUCCESS] Backend berhasil Build & Test di GitHub Actions!"
         exit 0
     fi
 
-    echo "❌ [FAIL] Status: $CONCLUSION. Mengambil log..."
+    echo " [FAIL] Status: $CONCLUSION. Mengambil log..."
     gh run view "$RUN_ID" --log > "$ROOT_DIR/gh_log.txt"
     
     grep -iE "error|failed|exception|traceback" "$ROOT_DIR/gh_log.txt" | head -n 30 > "$ROOT_DIR/filtered_errors.txt"
@@ -98,9 +93,9 @@ for (( i=1; i<=MAX_FIX_RETRIES; i++ )); do
 
     PROMPT="GitHub Actions GAGAL. Log error:
 $ERROR_CONTEXT
-Tugasmu: Analisis dan perbaiki HANYA file yang disebutkan di error log."
+Tugasmu: Analisis dan perbaiki HANYA file yang disebutkan di error log. Jangan sentuh file lain."
     
     run_aider "$PROMPT"
 done
-echo "⛔ Mencapai batas maksimal retry."
+echo "⛔ Mencapai batas maksimal retry ($MAX_FIX_RETRIES)."
 exit 1
