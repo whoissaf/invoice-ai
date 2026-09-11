@@ -27,5 +27,13 @@ jobs:
 
     - name: Syntax Check
       run: |
-        for file in *.py; do python -m py_compile "$file" || exit 1; done
-        echo "All syntax checks passed!"
+        shopt -s nullglob
+        py_files=(*.py)
+        if [ ${#py_files[@]} -eq 0 ]; then
+          echo "No Python files found to check"
+        else
+          for file in "${py_files[@]}"; do
+            python -m py_compile "$file" || exit 1
+          done
+          echo "All syntax checks passed!"
+        fi
