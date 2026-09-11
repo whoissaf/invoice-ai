@@ -33,7 +33,7 @@ jobs:
           echo "No Python files found to check"
         else
           for file in "${py_files[@]}"; do
-            python -m py_compile "$file" || exit 1
+            python -m py_compile "$file" 2>/dev/null || exit 1
           done
           echo "All syntax checks passed!"
         fi
