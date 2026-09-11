@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+*.pyc
+
+# Node
+node_modules/
+dist/
+build/
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+
+# Smart contract
+out/
+cache/
+broadcast/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Loop artifacts (generated)
+pelajaran.txt
+error-gha.log
+opencode-output.log
+pytest.log
+npm-test.log
+forge-test.log
+bandit.log
+auto-loop.log
+
+# Plandex (legacy)
+.plandex/
+.plandex-v2/
