@@ -28,7 +28,7 @@ jobs:
     - name: Syntax Check
       run: |
         shopt -s nullglob
-        py_files=$(find . -name "*.py")
+        py_files=$(find . -type f -name "*.py")
         if [ -z "$py_files" ]; then
           echo "No Python files found to check"
         else
