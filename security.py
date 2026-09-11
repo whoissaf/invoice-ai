@@ -12,9 +12,9 @@ from schemas import UserRole
 
 # Config from environment variables
 import os
-SECRET_KEY = os.getenv("SECRET_KEY", "fallback_dev_key_for_local_only")
+SECRET_KEY = os.getenv("SECRET_KEY", "super-secret-fallback-key")
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
+ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
 # Password hashing
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
