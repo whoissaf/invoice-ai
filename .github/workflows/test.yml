@@ -27,6 +27,7 @@ jobs:
 
     - name: Syntax Check
       run: |
+        cd backend
         shopt -s nullglob
         py_files=$(find . -type f -name "*.py")
         if [ -z "$py_files" ]; then
