@@ -1690,5 +1690,3 @@ PRD Backend ini menjadi acuan utama untuk pengembangan **InvoiceFlow AI**. Setia
 **Target MVP Backend:** 8 minggu setelah persetujuan PRD.
 **Target Production Ready:** 6 bulan.
 
----
-
