@@ -1,0 +1,1 @@
+test	Install dependencies	2026-09-11T09:13:15.4401970Z ##[error]An error occurred trying to start process '/usr/bin/bash' with working directory '/home/runner/work/invoice-ai/invoice-ai/./backend'. No such file or directory

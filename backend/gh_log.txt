@@ -1,0 +1,153 @@
+test	Set up job	﻿2026-09-11T09:13:13.6823435Z Current runner version: '2.337.0'
+test	Set up job	2026-09-11T09:13:13.6850082Z ##[group]Runner Image Provisioner
+test	Set up job	2026-09-11T09:13:13.6850984Z Hosted Compute Agent
+test	Set up job	2026-09-11T09:13:13.6851685Z Version: 20260828.587
+test	Set up job	2026-09-11T09:13:13.6852336Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+test	Set up job	2026-09-11T09:13:13.6853058Z Build Date: 2026-08-28T16:44:25Z
+test	Set up job	2026-09-11T09:13:13.6853873Z Worker ID: {a93599f4-f3da-4692-b827-46094c8f8fd4}
+test	Set up job	2026-09-11T09:13:13.6854595Z Azure Region: westus
+test	Set up job	2026-09-11T09:13:13.6855138Z ##[endgroup]
+test	Set up job	2026-09-11T09:13:13.6857179Z ##[group]Operating System
+test	Set up job	2026-09-11T09:13:13.6857851Z Ubuntu
+test	Set up job	2026-09-11T09:13:13.6858447Z 24.04.5
+test	Set up job	2026-09-11T09:13:13.6859037Z LTS
+test	Set up job	2026-09-11T09:13:13.6859632Z ##[endgroup]
+test	Set up job	2026-09-11T09:13:13.6860283Z ##[group]Runner Image
+test	Set up job	2026-09-11T09:13:13.6860874Z Image: ubuntu-24.04
+test	Set up job	2026-09-11T09:13:13.6861557Z Version: 20260907.300.1
+test	Set up job	2026-09-11T09:13:13.6862638Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260907.300/images/ubuntu/Ubuntu2404-Readme.md
+test	Set up job	2026-09-11T09:13:13.6864814Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260907.300
+test	Set up job	2026-09-11T09:13:13.6865826Z ##[endgroup]
+test	Set up job	2026-09-11T09:13:13.6867500Z ##[group]GITHUB_TOKEN Permissions
+test	Set up job	2026-09-11T09:13:13.6869430Z Contents: read
+test	Set up job	2026-09-11T09:13:13.6870126Z Metadata: read
+test	Set up job	2026-09-11T09:13:13.6870708Z Packages: read
+test	Set up job	2026-09-11T09:13:13.6871294Z ##[endgroup]
+test	Set up job	2026-09-11T09:13:13.6873395Z Secret source: Actions
+test	Set up job	2026-09-11T09:13:13.6874362Z Cache mode: write
+test	Set up job	2026-09-11T09:13:13.6875140Z Prepare workflow directory
+test	Set up job	2026-09-11T09:13:13.7345415Z Prepare all required actions
+test	Set up job	2026-09-11T09:13:13.7394122Z Getting action download info
+test	Set up job	2026-09-11T09:13:14.1202853Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+test	Set up job	2026-09-11T09:13:14.2274815Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+test	Set up job	2026-09-11T09:13:14.4043242Z Complete job name: test
+test	Run actions/checkout@v4	﻿2026-09-11T09:13:14.4803528Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test	Run actions/checkout@v4	2026-09-11T09:13:14.4812524Z ##[group]Run actions/checkout@v4
+test	Run actions/checkout@v4	2026-09-11T09:13:14.4813286Z with:
+test	Run actions/checkout@v4	2026-09-11T09:13:14.4813742Z   repository: whoissaf/invoice-ai
+test	Run actions/checkout@v4	2026-09-11T09:13:14.4817578Z   token: ***
+test	Run actions/checkout@v4	2026-09-11T09:13:14.4818021Z   ssh-strict: true
+test	Run actions/checkout@v4	2026-09-11T09:13:14.4818459Z   ssh-user: git
+test	Run actions/checkout@v4	2026-09-11T09:13:14.4818929Z   persist-credentials: true
+test	Run actions/checkout@v4	2026-09-11T09:13:14.4819410Z   clean: true
+test	Run actions/checkout@v4	2026-09-11T09:13:14.4819853Z   sparse-checkout-cone-mode: true
+test	Run actions/checkout@v4	2026-09-11T09:13:14.4820372Z   fetch-depth: 1
+test	Run actions/checkout@v4	2026-09-11T09:13:14.4820810Z   fetch-tags: false
+test	Run actions/checkout@v4	2026-09-11T09:13:14.4821251Z   show-progress: true
+test	Run actions/checkout@v4	2026-09-11T09:13:14.4821697Z   lfs: false
+test	Run actions/checkout@v4	2026-09-11T09:13:14.4822102Z   submodules: false
+test	Run actions/checkout@v4	2026-09-11T09:13:14.4822599Z   set-safe-directory: true
+test	Run actions/checkout@v4	2026-09-11T09:13:14.4823107Z   allow-unsafe-pr-checkout: false
+test	Run actions/checkout@v4	2026-09-11T09:13:14.4823918Z ##[endgroup]
+test	Run actions/checkout@v4	2026-09-11T09:13:14.5889607Z Syncing repository: whoissaf/invoice-ai
+test	Run actions/checkout@v4	2026-09-11T09:13:14.5892040Z ##[group]Getting Git version info
+test	Run actions/checkout@v4	2026-09-11T09:13:14.5893071Z Working directory is '/home/runner/work/invoice-ai/invoice-ai'
+test	Run actions/checkout@v4	2026-09-11T09:13:14.5894490Z [command]/usr/bin/git version
+test	Run actions/checkout@v4	2026-09-11T09:13:14.5964773Z git version 2.55.0
+test	Run actions/checkout@v4	2026-09-11T09:13:14.5992875Z ##[endgroup]
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6011488Z Temporarily overriding HOME='/home/runner/work/_temp/e38e635c-c1e5-493d-a524-d203a80bbb63' before making global git config changes
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6013839Z Adding repository directory to the temporary git global config as a safe directory
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6017633Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/invoice-ai/invoice-ai
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6072263Z Deleting the contents of '/home/runner/work/invoice-ai/invoice-ai'
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6083145Z ##[group]Initializing the repository
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6084638Z [command]/usr/bin/git init /home/runner/work/invoice-ai/invoice-ai
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6204476Z hint: Using 'master' as the name for the initial branch. This default branch name
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6206504Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6208072Z hint: to use in all of your new repositories, which will suppress this warning,
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6209287Z hint: call:
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6209974Z hint:
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6210821Z hint: 	git config --global init.defaultBranch <name>
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6211805Z hint:
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6212719Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6214245Z hint: 'development'. The just-created branch can be renamed via this command:
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6215498Z hint:
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6216361Z hint: 	git branch -m <name>
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6217129Z hint:
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6218172Z hint: Disable this message with "git config set advice.defaultBranchName false"
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6219995Z Initialized empty Git repository in /home/runner/work/invoice-ai/invoice-ai/.git/
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6246619Z [command]/usr/bin/git remote add origin https://github.com/whoissaf/invoice-ai
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6289497Z ##[endgroup]
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6290918Z ##[group]Disabling automatic garbage collection
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6306236Z [command]/usr/bin/git config --local gc.auto 0
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6329666Z ##[endgroup]
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6330997Z ##[group]Setting up auth
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6338010Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6373964Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6746300Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test	Run actions/checkout@v4	2026-09-11T09:13:14.6788417Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test	Run actions/checkout@v4	2026-09-11T09:13:14.7061997Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test	Run actions/checkout@v4	2026-09-11T09:13:14.7101427Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test	Run actions/checkout@v4	2026-09-11T09:13:14.7329717Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+test	Run actions/checkout@v4	2026-09-11T09:13:14.7369136Z ##[endgroup]
+test	Run actions/checkout@v4	2026-09-11T09:13:14.7370032Z ##[group]Fetching the repository
+test	Run actions/checkout@v4	2026-09-11T09:13:14.7379178Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +d4bcbe3f6598bc3a04d4cc0434cc6bcdca2eff8d:refs/remotes/origin/main
+test	Run actions/checkout@v4	2026-09-11T09:13:15.1749926Z From https://github.com/whoissaf/invoice-ai
+test	Run actions/checkout@v4	2026-09-11T09:13:15.1751914Z  * [new ref]         d4bcbe3f6598bc3a04d4cc0434cc6bcdca2eff8d -> origin/main
+test	Run actions/checkout@v4	2026-09-11T09:13:15.1755392Z ##[endgroup]
+test	Run actions/checkout@v4	2026-09-11T09:13:15.1756846Z ##[group]Determining the checkout info
+test	Run actions/checkout@v4	2026-09-11T09:13:15.1757964Z ##[endgroup]
+test	Run actions/checkout@v4	2026-09-11T09:13:15.1764775Z [command]/usr/bin/git sparse-checkout disable
+test	Run actions/checkout@v4	2026-09-11T09:13:15.1826903Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+test	Run actions/checkout@v4	2026-09-11T09:13:15.1861027Z ##[group]Checking out the ref
+test	Run actions/checkout@v4	2026-09-11T09:13:15.1865548Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+test	Run actions/checkout@v4	2026-09-11T09:13:15.1940892Z Switched to a new branch 'main'
+test	Run actions/checkout@v4	2026-09-11T09:13:15.1949259Z branch 'main' set up to track 'origin/main'.
+test	Run actions/checkout@v4	2026-09-11T09:13:15.1954964Z ##[endgroup]
+test	Run actions/checkout@v4	2026-09-11T09:13:15.1999491Z [command]/usr/bin/git log -1 --format=%H
+test	Run actions/checkout@v4	2026-09-11T09:13:15.2026566Z d4bcbe3f6598bc3a04d4cc0434cc6bcdca2eff8d
+test	Set up Python	﻿2026-09-11T09:13:15.2303401Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test	Set up Python	2026-09-11T09:13:15.2306700Z ##[group]Run actions/setup-python@v5
+test	Set up Python	2026-09-11T09:13:15.2307272Z with:
+test	Set up Python	2026-09-11T09:13:15.2307683Z   python-version: 3.12
+test	Set up Python	2026-09-11T09:13:15.2308149Z   check-latest: false
+test	Set up Python	2026-09-11T09:13:15.2311633Z   token: ***
+test	Set up Python	2026-09-11T09:13:15.2312072Z   update-environment: true
+test	Set up Python	2026-09-11T09:13:15.2312572Z   allow-prereleases: false
+test	Set up Python	2026-09-11T09:13:15.2313063Z   freethreaded: false
+test	Set up Python	2026-09-11T09:13:15.2313499Z ##[endgroup]
+test	Set up Python	2026-09-11T09:13:15.3707958Z ##[group]Installed versions
+test	Set up Python	2026-09-11T09:13:15.3812540Z (node:2180) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test	Set up Python	2026-09-11T09:13:15.3815250Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test	Set up Python	2026-09-11T09:13:15.3817225Z Successfully set up CPython (3.12.14)
+test	Set up Python	2026-09-11T09:13:15.3818660Z ##[endgroup]
+test	Install dependencies	﻿2026-09-11T09:13:15.4011583Z ##[group]Run python -m pip install --upgrade pip
+test	Install dependencies	2026-09-11T09:13:15.4012919Z [36;1mpython -m pip install --upgrade pip[0m
+test	Install dependencies	2026-09-11T09:13:15.4014386Z [36;1mif [ -f requirements.txt ]; then pip install -r requirements.txt; fi[0m
+test	Install dependencies	2026-09-11T09:13:15.4015772Z [36;1mpip install pytest[0m
+test	Install dependencies	2026-09-11T09:13:15.4078892Z shell: /usr/bin/bash -e {0}
+test	Install dependencies	2026-09-11T09:13:15.4079794Z env:
+test	Install dependencies	2026-09-11T09:13:15.4080579Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+test	Install dependencies	2026-09-11T09:13:15.4082486Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+test	Install dependencies	2026-09-11T09:13:15.4084042Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+test	Install dependencies	2026-09-11T09:13:15.4085362Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+test	Install dependencies	2026-09-11T09:13:15.4087006Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+test	Install dependencies	2026-09-11T09:13:15.4088361Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+test	Install dependencies	2026-09-11T09:13:15.4089491Z ##[endgroup]
+test	Install dependencies	2026-09-11T09:13:15.4401970Z ##[error]An error occurred trying to start process '/usr/bin/bash' with working directory '/home/runner/work/invoice-ai/invoice-ai/./backend'. No such file or directory
+test	Post Run actions/checkout@v4	﻿2026-09-11T09:13:15.4657986Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test	Post Run actions/checkout@v4	2026-09-11T09:13:15.4662398Z Post job cleanup.
+test	Post Run actions/checkout@v4	2026-09-11T09:13:15.5550570Z [command]/usr/bin/git version
+test	Post Run actions/checkout@v4	2026-09-11T09:13:15.5596140Z git version 2.55.0
+test	Post Run actions/checkout@v4	2026-09-11T09:13:15.5668643Z Temporarily overriding HOME='/home/runner/work/_temp/d93d4fc0-b7b4-408d-afe4-6497f940892a' before making global git config changes
+test	Post Run actions/checkout@v4	2026-09-11T09:13:15.5672942Z Adding repository directory to the temporary git global config as a safe directory
+test	Post Run actions/checkout@v4	2026-09-11T09:13:15.5676625Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/invoice-ai/invoice-ai
+test	Post Run actions/checkout@v4	2026-09-11T09:13:15.5722426Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test	Post Run actions/checkout@v4	2026-09-11T09:13:15.5769161Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test	Post Run actions/checkout@v4	2026-09-11T09:13:15.6027450Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test	Post Run actions/checkout@v4	2026-09-11T09:13:15.6058140Z http.https://github.com/.extraheader
+test	Post Run actions/checkout@v4	2026-09-11T09:13:15.6074270Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+test	Post Run actions/checkout@v4	2026-09-11T09:13:15.6113366Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test	Post Run actions/checkout@v4	2026-09-11T09:13:15.6412241Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test	Post Run actions/checkout@v4	2026-09-11T09:13:15.6460251Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test	Complete job	﻿2026-09-11T09:13:15.6883638Z Cleaning up orphan processes
+test	Complete job	2026-09-11T09:13:15.7183271Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
