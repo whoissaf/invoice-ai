@@ -8,7 +8,7 @@ CURRENT_PROVIDER="gemini"
 mkdir -p $BACKEND_DIR
 cd $BACKEND_DIR || exit
 
-AIDER_BASE_FLAGS="--yes --no-pretty --map-tokens 1024 --max-chat-history-tokens 1024"
+AIDER_BASE_FLAGS="--yes --no-pretty --no-show-model-warnings --map-tokens 1024 --max-chat-history-tokens 1024"
 FILES=("requirements.txt" "database.py" "models.py" "schemas.py" "security.py" "routers.py" "main.py")
 
 run_aider_with_fallback() {
@@ -18,10 +18,10 @@ run_aider_with_fallback() {
         echo "🤖 [INFO] Menjalankan Aider dengan provider: $CURRENT_PROVIDER"
         if [ "$CURRENT_PROVIDER" == "gemini" ]; then
             export GEMINI_API_KEY="$GEMINI_KEY"
-            MODEL="gemini/gemini-2.0-flash-exp"
+            MODEL="gemini/gemini-2.0-flash"
         else
             export OPENROUTER_API_KEY="$OPENROUTER_KEY"
-            MODEL="openrouter/google/gemini-2.0-flash-exp"
+            MODEL="openrouter/google/gemini-2.0-flash"
         fi
 
         OUTPUT=$(aider $AIDER_BASE_FLAGS $extra_flags --model "$MODEL" --message "$prompt" 2>&1)
